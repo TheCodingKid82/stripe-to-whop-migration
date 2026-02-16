@@ -1,0 +1,34 @@
+# GitHub App Manifest for MigrateToWhop
+name: MigrateToWhop
+description: Automated migration tool from Stripe to Whop with AI-powered assistance
+url: https://github.com/TheCodingKid82/stripe-to-whop-migration
+author: TheCodingKid82
+
+# GitHub App configuration
+public: false
+
+# Default permissions
+default_permissions:
+  contents: write
+  issues: write
+  pull_requests: write
+  metadata: read
+  repository_hooks: read
+  statuses: write
+  checks: write
+
+# Events the app subscribes to
+default_events:
+  - issues
+  - issue_comment
+  - pull_request
+  - pull_request_review
+  - push
+  - repository
+  - status
+  - check_run
+  - workflow_run
+
+# Webhook URL (update with your Railway deployment URL)
+webhook_url: https://your-railway-app.railway.app/webhooks/github
+webhook_secret: ${WEBHOOK_SECRET}
